@@ -27,24 +27,24 @@ class ReactTimeInput extends Component {
             }
             parent.parentNode.querySelector('input').value = input
         }
-        var myhours = '00'
-        var myminutes = '00'
-        var myseconds = '00'
+        var myhours = 0
+        var myminutes = 0
+        var myseconds = 0
         if(myProps.defaultValue !== ''){
             let result = myProps.defaultValue
             if(myProps.worksInMilliseconds){
                 result = millisecondsToFormat(parseInt(myProps.defaultValue))
             }
             result = result.split(':')
-            myhours = result[0] !== undefined ? result[0] : '00'
-            myminutes = result[1] !== undefined ? result[1] : '00'
-            myseconds = result[2] !== undefined ? result[2] : '00'
+            myhours = result[0] !== undefined ? result[0] : 0
+            myminutes = result[1] !== undefined ? result[1] : 0
+            myseconds = result[2] !== undefined ? result[2] : 0
         }
         return (
             <div className={'react-timeinput' + (myProps.styled ? ' react-timeinput-styled' : '')} id={'react-timeinput-'+myProps.divKey}>
                 <input type='hidden' {...myProps.inputProps} defaultValue={myProps.defaultValue}/>
                 <div className='react-timeinput-visible' >
-                    <input type={myProps.renderHours ? 'number' : 'hidden'} onChange={changeInput} className='react-timeinput-hours' defaultValue={myhours}/>{myProps.styled && myProps.renderHours ? <span className='react-timeinput-separator'>:</span> : ''}
+                    <input type={myProps.renderHours ? 'number' : 'hidden'} onChange={changeInput} min='0' className='react-timeinput-hours' defaultValue={myhours}/>{myProps.styled && myProps.renderHours ? <span className='react-timeinput-separator'>:</span> : ''}
                     <input type={myProps.renderMinutes ? 'number' : 'hidden'} onChange={changeInput} className='react-timeinput-minutes' defaultValue={myminutes} max='59' min='0' />{myProps.styled && myProps.renderMinutes ? <span className='react-timeinput-separator'>:</span> : ''}
                     <input type={myProps.renderSeconds ? 'number' : 'hidden'} onChange={changeInput} className='react-timeinput-seconds' defaultValue={myseconds} max='59' min='0' />{myProps.styled && myProps.renderSeconds ? <span className='react-timeinput-separator'>:</span> : ''}
                 </div>

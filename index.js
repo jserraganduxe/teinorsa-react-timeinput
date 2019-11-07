@@ -80,9 +80,9 @@ function (_Component) {
         parent.parentNode.querySelector('input').value = input;
       };
 
-      var myhours = '00';
-      var myminutes = '00';
-      var myseconds = '00';
+      var myhours = 0;
+      var myminutes = 0;
+      var myseconds = 0;
 
       if (myProps.defaultValue !== '') {
         var result = myProps.defaultValue;
@@ -92,9 +92,9 @@ function (_Component) {
         }
 
         result = result.split(':');
-        myhours = result[0] !== undefined ? result[0] : '00';
-        myminutes = result[1] !== undefined ? result[1] : '00';
-        myseconds = result[2] !== undefined ? result[2] : '00';
+        myhours = result[0] !== undefined ? result[0] : 0;
+        myminutes = result[1] !== undefined ? result[1] : 0;
+        myseconds = result[2] !== undefined ? result[2] : 0;
       }
 
       return _react["default"].createElement("div", {
@@ -109,6 +109,7 @@ function (_Component) {
       }, _react["default"].createElement("input", {
         type: myProps.renderHours ? 'number' : 'hidden',
         onChange: changeInput,
+        min: "0",
         className: "react-timeinput-hours",
         defaultValue: myhours
       }), myProps.styled && myProps.renderHours ? _react["default"].createElement("span", {
