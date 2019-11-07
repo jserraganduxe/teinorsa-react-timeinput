@@ -15,6 +15,9 @@ class ReactTimeInput extends Component {
             styled: this.props.styled !== undefined ? this.props.styled : false
         }
         const changeInput = (e) => {
+            if(e.currentTarget.value < 10){
+                e.currentTarget.value = '0'+e.currentTarget.value
+            }
             let parent = e.currentTarget.parentNode
             let hours = parent.querySelector('.react-timeinput-hours').value
             let minutes = parent.querySelector('.react-timeinput-minutes').value
@@ -27,18 +30,20 @@ class ReactTimeInput extends Component {
             }
             parent.parentNode.querySelector('input').value = input
         }
-        var myhours = 0
-        var myminutes = 0
-        var myseconds = 0
+        var myhours = '00'
+        var myminutes = '00'
+        var myseconds = '00'
         if(myProps.defaultValue !== ''){
             let result = myProps.defaultValue
             if(myProps.worksInMilliseconds){
                 result = millisecondsToFormat(parseInt(myProps.defaultValue))
             }
             result = result.split(':')
-            myhours = result[0] !== undefined ? result[0] : 0
-            myminutes = result[1] !== undefined ? result[1] : 0
-            myseconds = result[2] !== undefined ? result[2] : 0
+            myhours = result[0] !== undefined ? result[0] : '00'
+            myminutes = result[1] !== undefined ? result[1] : '00'
+            myseconds = result[2] !== undefined ? result[2] : '00'
+        }else{
+            myProps.defaultValue = myhours+':'+myminutes+':'+myseconds
         }
         return (
             <div className={'react-timeinput' + (myProps.styled ? ' react-timeinput-styled' : '')} id={'react-timeinput-'+myProps.divKey}>

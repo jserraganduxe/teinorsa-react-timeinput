@@ -65,6 +65,10 @@ function (_Component) {
       };
 
       var changeInput = function changeInput(e) {
+        if (e.currentTarget.value < 10) {
+          e.currentTarget.value = '0' + e.currentTarget.value;
+        }
+
         var parent = e.currentTarget.parentNode;
         var hours = parent.querySelector('.react-timeinput-hours').value;
         var minutes = parent.querySelector('.react-timeinput-minutes').value;
@@ -80,9 +84,9 @@ function (_Component) {
         parent.parentNode.querySelector('input').value = input;
       };
 
-      var myhours = 0;
-      var myminutes = 0;
-      var myseconds = 0;
+      var myhours = '00';
+      var myminutes = '00';
+      var myseconds = '00';
 
       if (myProps.defaultValue !== '') {
         var result = myProps.defaultValue;
@@ -92,9 +96,11 @@ function (_Component) {
         }
 
         result = result.split(':');
-        myhours = result[0] !== undefined ? result[0] : 0;
-        myminutes = result[1] !== undefined ? result[1] : 0;
-        myseconds = result[2] !== undefined ? result[2] : 0;
+        myhours = result[0] !== undefined ? result[0] : '00';
+        myminutes = result[1] !== undefined ? result[1] : '00';
+        myseconds = result[2] !== undefined ? result[2] : '00';
+      } else {
+        myProps.defaultValue = myhours + ':' + myminutes + ':' + myseconds;
       }
 
       return _react["default"].createElement("div", {
