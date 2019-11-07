@@ -1,0 +1,18 @@
+.react-timeinput-styled input{
+    border: 0;
+    width: 30px;
+    text-align: center;
+}
+.react-timeinput-styled .react-timeinput-separator:last-of-type{
+    display: none
+}
+.react-timeinput-styled input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.react-timeinput-styled input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}

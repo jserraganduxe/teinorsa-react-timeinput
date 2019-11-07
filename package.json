@@ -1,0 +1,32 @@
+{
+  "name": "@teinorsa/react-timeinput",
+  "version": "1.0.2",
+  "description": "A package for counter hours input. Works in milliseconds or in clasical format HH:MM:SS.  ",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/babel src --out-file index.js"
+  },
+  "keywords": ["react", "timeinput", "react-timeinput", "hours", "counter", "react input"],
+  "author": "Teinor",
+  "license": "ISC",
+  "dependencies": {
+      "react": "^16.11.0",
+      "react-dom": "^16.11.0",
+      "prop-types": "^15.7.2",
+      "moment": "^2.24.0"
+  },
+  "peerDependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "prop-types": "^15.7.2",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "moment": "^2.24.0",
+    "prop-types": "^15.7.2"
+  }
+}
