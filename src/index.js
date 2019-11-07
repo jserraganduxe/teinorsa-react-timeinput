@@ -36,9 +36,9 @@ class ReactTimeInput extends Component {
                 result = millisecondsToFormat(parseInt(myProps.defaultValue))
             }
             result = result.split(':')
-            myhours = result[0] !== undefined ? result[0] : 0
-            myminutes = result[1] !== undefined ? result[1] : 0
-            myseconds = result[2] !== undefined ? result[2] : 0
+            myhours = result[0] !== undefined ? result[0] : 00
+            myminutes = result[1] !== undefined ? result[1] : 00
+            myseconds = result[2] !== undefined ? result[2] : 00
         }
         return (
             <div className={'react-timeinput' + (myProps.styled ? ' react-timeinput-styled' : '')} id={'react-timeinput-'+myProps.divKey}>
