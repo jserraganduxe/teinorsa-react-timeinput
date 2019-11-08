@@ -1,6 +1,6 @@
 {
   "name": "@teinorsa/react-timeinput",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A package for counter hours input. Works in milliseconds or in clasical format HH:MM:SS.  ",
   "main": "index.js",
   "scripts": {

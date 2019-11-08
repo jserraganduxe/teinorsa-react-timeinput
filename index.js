@@ -69,6 +69,10 @@ function (_Component) {
           e.currentTarget.value = '0' + e.currentTarget.value;
         }
 
+        if (!e.currentTarget.classList.contains('react-timeinput-hours') && e.currentTarget.value > 59) {
+          e.currentTarget.value = 59;
+        }
+
         var parent = e.currentTarget.parentNode;
         var hours = parent.querySelector('.react-timeinput-hours').value;
         var minutes = parent.querySelector('.react-timeinput-minutes').value;

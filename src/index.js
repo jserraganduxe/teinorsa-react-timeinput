@@ -18,6 +18,9 @@ class ReactTimeInput extends Component {
             if(e.currentTarget.value < 10){
                 e.currentTarget.value = '0'+e.currentTarget.value
             }
+            if(!e.currentTarget.classList.contains('react-timeinput-hours') && e.currentTarget.value > 59){
+                e.currentTarget.value = 59
+            }
             let parent = e.currentTarget.parentNode
             let hours = parent.querySelector('.react-timeinput-hours').value
             let minutes = parent.querySelector('.react-timeinput-minutes').value
