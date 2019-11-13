@@ -1,10 +1,15 @@
 {
   "name": "@teinorsa/react-timeinput",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A package for counter hours input. Works in milliseconds or in clasical format HH:MM:SS.  ",
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/babel src --out-file index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:jserraganduxe/teinorsa-react-timeinput.git",
+    "directory": "packages/name"
   },
   "keywords": ["react", "timeinput", "react-timeinput", "hours", "counter", "react input"],
   "author": "Teinor",
