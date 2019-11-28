@@ -95,9 +95,9 @@ export const millisecondsToFormat = (it) => {
 }
 export const formatToMilliseconds = (hours, minutes, seconds) => {
     var date = new Date(0)
-    date.setHours(hours+1)
-    date.setMinutes(minutes)
-    date.setSeconds(seconds)
+    date.setHours(parseInt(hours)+1)
+    date.setMinutes(parseInt(minutes))
+    date.setSeconds(parseInt(seconds))
     date = moment(date)
     var date2 = moment(new Date(0))
     var diff = date.diff(date2)
