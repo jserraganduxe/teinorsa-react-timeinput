@@ -61,7 +61,8 @@ function (_Component) {
         renderSeconds: this.props.renderSeconds !== undefined ? this.props.renderSeconds : true,
         defaultValue: this.props.defaultValue !== undefined ? this.props.defaultValue : '',
         worksInMilliseconds: this.props.worksInMilliseconds !== undefined ? this.props.worksInMilliseconds : true,
-        styled: this.props.styled !== undefined ? this.props.styled : false
+        styled: this.props.styled !== undefined ? this.props.styled : false,
+        onChange: this.props.onChange !== undefined ? this.props.onChange : false
       };
 
       var changeInput = function changeInput(e) {
@@ -86,6 +87,7 @@ function (_Component) {
         }
 
         parent.parentNode.querySelector('input').value = input;
+        myProps.onChange(input);
       };
 
       var myhours = '00';
@@ -157,7 +159,8 @@ ReactTimeInput.propTypes = {
   renderSeconds: _propTypes["default"].bool,
   defaultValue: _propTypes["default"].string,
   worksInMilliseconds: _propTypes["default"].bool,
-  styled: _propTypes["default"].bool
+  styled: _propTypes["default"].bool,
+  onChange: _propTypes["default"].func
 };
 var _default = ReactTimeInput;
 exports["default"] = _default;

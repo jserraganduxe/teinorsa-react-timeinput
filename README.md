@@ -9,6 +9,10 @@
   - You can work in milliseconds (For example 41848214 milliseconds = 11:37:28)
   - You can work in hours format (11:37:28) 
 
+##### Extra features
+  - Have a function `millisecondsToFormat` which get `time` in MS as param and return `HH:MM:SS`
+  - Have a function `formatToMilliseconds` which get as params `hours, minutes, seconds` and return `ms`
+
 ### Installation
 
 Install react-timeinput executing :
@@ -37,6 +41,7 @@ Dillinger is currently extended with the following plugins. Instructions on how 
 | defaultValue | string (milliseconds or HH:MM:SS) | ''
 | worksInMilliseconds | boolean | true
 | styled | boolean | false
+| onChange | function (return val with MS or HH:MM:SS depending worksInMilliseconds) | false
 
 ## Examples
 #### Example 1

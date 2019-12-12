@@ -12,7 +12,8 @@ class ReactTimeInput extends Component {
             renderSeconds: this.props.renderSeconds !== undefined ? this.props.renderSeconds : true,
             defaultValue: this.props.defaultValue !== undefined ? this.props.defaultValue : '',
             worksInMilliseconds: this.props.worksInMilliseconds !== undefined ? this.props.worksInMilliseconds : true,
-            styled: this.props.styled !== undefined ? this.props.styled : false
+            styled: this.props.styled !== undefined ? this.props.styled : false,
+            onChange: this.props.onChange !== undefined ? this.props.onChange : false
         }
         const changeInput = (e) => {
             if(e.currentTarget.value < 10){
@@ -32,6 +33,7 @@ class ReactTimeInput extends Component {
                 input = hours+':'+minutes+':'+seconds
             }
             parent.parentNode.querySelector('input').value = input
+            myProps.onChange(input)
         }
         var myhours = '00'
         var myminutes = '00'
@@ -71,7 +73,8 @@ ReactTimeInput.propTypes = {
     renderSeconds: PropTypes.bool,
     defaultValue: PropTypes.string, 
     worksInMilliseconds: PropTypes.bool,
-    styled: PropTypes.bool
+    styled: PropTypes.bool,
+    onChange: PropTypes.func,
 }
 export default ReactTimeInput
 
