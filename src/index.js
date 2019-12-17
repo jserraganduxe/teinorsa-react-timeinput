@@ -33,7 +33,9 @@ class ReactTimeInput extends Component {
                 input = hours+':'+minutes+':'+seconds
             }
             parent.parentNode.querySelector('input').value = input
-            myProps.onChange(input)
+            if(myProps.onChange){
+                myProps.onChange(input)
+            }
         }
         var myhours = '00'
         var myminutes = '00'
